@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CartStateProvider from '../components/CartStateProvider.jsx';
+import ProfileWrapper from '../components/ProfileWrapper.jsx';
+import { CartProvider } from '../context/CartContext.jsx';
+import { Toaster } from 'react-hot-toast';
+import { AuthProvider } from '../context/AuthContext.jsx';
+---
+
+<Layout title="Profile - BMM Donation Portal">
+  <AuthProvider client:load>
+    <CartProvider client:load>
+      <CartStateProvider client:load />
+      <ProfileWrapper client:load />
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          duration: 4000,
+          style: {
+            background: '#333',
+            color: '#fff',
+          },
+        }}
+        client:load
+      />
+    </CartProvider>
+  </AuthProvider>
+</Layout>

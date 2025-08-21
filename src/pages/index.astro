@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CartStateProvider from '../components/CartStateProvider.jsx';
+import ErrorBoundary from '../components/ErrorBoundary.jsx';
+import { AuthProvider } from '../context/AuthContext.jsx';
+import { CanvasserAuthProvider } from '../context/CanvasserAuthContext.jsx';
+import { CartProvider } from '../context/CartContext.jsx';
+---
+
+<Layout title="Make an online donation through Banbury Madni Masjid">
+  <ErrorBoundary client:load>
+    <AuthProvider client:load>
+      <CanvasserAuthProvider client:load>
+        <CartProvider client:load>
+          <CartStateProvider client:load />
+        </CartProvider>
+      </CanvasserAuthProvider>
+    </AuthProvider>
+  </ErrorBoundary>
+</Layout>

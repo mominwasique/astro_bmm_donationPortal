@@ -1,0 +1,45 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'BMM Donation Portal' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="/public/no-image-logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <!-- Google Analytics -->
+    <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-ZX6XWYTMCP"
+    ></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-ZX6XWYTMCP');
+    </script>
+  </head>
+  <body>
+    <div class="flex flex-col min-h-screen">
+      <slot name="header" />
+      <main class="flex-grow pb-28 md:pb-0">
+        <slot />
+      </main>
+      <slot name="footer" />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  @import '../index.css';
+</style>

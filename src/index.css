@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Nunito';
+  src: url('/Nunito/Nunito-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 1000;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Antonio';
+  src: url('/Antonio/Antonio-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 1000;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Shadows Into Light';
+  src: url('/ShadowsIntoLight-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .font-nunito {
+    font-family: 'Nunito', sans-serif;
+  }
+  .font-antonio {
+    font-family: 'Antonio', sans-serif;
+  }
+
+
+  .font-shadows {
+    font-family: 'Shadows Into Light', cursive;
+  }
+}
+

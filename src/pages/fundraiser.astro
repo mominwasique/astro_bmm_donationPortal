@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderWrapper from '../components/HeaderWrapper.jsx';
+import CartWrapper from '../components/CartWrapper.jsx';
+import FundraiserWrapper from '../components/FundraiserWrapper.jsx';
+import { CartProvider } from '../context/CartContext.jsx';
+import { Toaster } from 'react-hot-toast';
+---
+
+<Layout title="Fundraiser - BMM Donation Portal">
+  <CartProvider client:load>
+    <CartWrapper client:load />
+    <HeaderWrapper client:load />
+    <FundraiserWrapper client:load />
+    <Toaster
+      position="top-center"
+      toastOptions={{
+        duration: 4000,
+        style: {
+          background: '#333',
+          color: '#fff',
+        },
+      }}
+      client:load
+    />
+  </CartProvider>
+</Layout>

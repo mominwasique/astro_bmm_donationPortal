@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderWrapper from '../components/HeaderWrapper.jsx';
+import CartWrapper from '../components/CartWrapper.jsx';
+import SuccessPage from '../components/SuccessPage.jsx';
+import { AuthProvider } from '../context/AuthContext.jsx';
+import { CanvasserAuthProvider } from '../context/CanvasserAuthContext.jsx';
+import { CartProvider } from '../context/CartContext.jsx';
+import { Toaster } from 'react-hot-toast';
+---
+
+<Layout title="Payment Success - BMM Donation Portal">
+  <AuthProvider client:load>
+    <CanvasserAuthProvider client:load>
+      <CartProvider client:load>
+        <CartWrapper client:load />
+        <HeaderWrapper client:load />
+        <SuccessPage client:load />
+        <Toaster
+          position="top-center"
+          toastOptions={{
+            duration: 4000,
+            style: {
+              background: '#333',
+              color: '#fff',
+            },
+          }}
+          client:load
+        />
+      </CartProvider>
+    </CanvasserAuthProvider>
+  </AuthProvider>
+</Layout>
