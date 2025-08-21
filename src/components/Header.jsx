@@ -160,11 +160,11 @@ const Header = ({ setIsOpen, cartItems, refreshTrigger }) => {
         >
           <ShoppingCart className="w-5 h-5" />
           <span className="text-[10px] mt-1">Cart</span>
-          {cartCount > 0 && (
+          {/* {cartCount > 0 && (
             <span className="absolute -top-1 -right-1 bg-secondary text-white text-xs rounded-full w-4 h-4 flex items-center justify-center text-[10px]">
               {cartCount > 99 ? '99+' : cartCount}
             </span>
-          )}
+          )} */}
         </button>
       </div>
     </nav>
@@ -246,18 +246,18 @@ const Header = ({ setIsOpen, cartItems, refreshTrigger }) => {
                 disabled={isLoading}
               >
                 <ShoppingCart className="w-5 h-5" />
-                {(cartCount || 0) > 0 && (
+                
                   <span className="absolute -top-2 -right-2 bg-secondary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                     {(cartCount || 0) > 99 ? '99+' : (cartCount || 0)}
                   </span>
-                )}
+                
                 {isLoading && (
                   <span className="absolute -top-2 -right-2 bg-gray-400 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                     <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                   </span>
                 )}
                 <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-primary text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                  Cart {(cartCount || 0) > 0 ? `(${cartCount})` : '(0)'}
+                  Cart 
                 </span>
               </button>
             </div>
