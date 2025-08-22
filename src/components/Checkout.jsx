@@ -369,10 +369,10 @@ const Checkout = () => {
       setIsAnimating(true);
       setTimeout(() => {
         // If user is not authenticated, send to login; else go to Gift Aid & Personal Info
-        if (!isAuthenticated) {
-          window.location.href = '/login';
-          return;
-        }
+        // if (!isAuthenticated) {
+        //   window.location.href = '/login';
+        //   return;
+        // }
         setStep(step + 1);
         window.scrollTo(0, 0);
         setIsAnimating(false);
